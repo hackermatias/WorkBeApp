@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start" (click)="back()">
+      <ion-icon src="../../assets/imgs/back-icon.svg" color="dark" class="back-icon"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      {{title | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-horizontal">
+  <ion-card class="ion-padding ion-text-center card-access">
+    <div class="start" [ngClass]="{'check-in': check === true, 'check-out': check === false}"></div>
+    <ion-card-title class="title" [color]="check === true ? 'success' : 'danger'">
+      <ion-label>{{formatTime}}</ion-label>
+    </ion-card-title>
+    <ion-card-subtitle [color]="check === true ? 'success' : 'danger'">
+      <ion-label>{{formatDate | uppercase}}</ion-label>
+    </ion-card-subtitle>
+  </ion-card>
+  <div class="item-wrapper">
+    <ion-icon slot="start" src="../../assets/imgs/sign-out-icon.svg" color="primary"></ion-icon>
+    <ion-label>{{entrance?.name}}</ion-label>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="bracelet-card ion-text-center ion-padding" (click)="braceletValidation()">
+          <ion-icon src="../../assets/imgs/bracelet-icon.svg"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-no-padding">
+        <ion-card class="ion-text-center card-options" (click)="dniValidation()">
+          <ion-icon src="../../assets/imgs/address-card-icon.svg"></ion-icon>
+          <ion-card-subtitle color="primary">
+            <ion-label>{{'cardId' | translate}}</ion-label>
+          </ion-card-subtitle>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding">
+        <ion-card class="ion-text-center card-options" (click)="manualValidation()">
+          <ion-icon src="../../assets/imgs/edit-icon.svg"></ion-icon>
+          <ion-card-subtitle color="primary">
+            <ion-label>{{'manual' | translate}}</ion-label>
+          </ion-card-subtitle>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-top" *ngIf="from === 2">
+      <ion-col size="12">
+        <ion-button expand="block" class="button-margin-top ion-text-capitalize" color="light" [disabled]="!validateContinue()"
+          (click)="continue()">
+          {{'continue' | translate}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-tab-button tab="home-menu" (click)="goHome()">
+      <ion-icon src="../../assets/imgs/home-icon.svg"></ion-icon>
+      <ion-label>{{'home' | translate}}</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-footer>

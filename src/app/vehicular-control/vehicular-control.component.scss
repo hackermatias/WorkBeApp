@@ -1,0 +1,19 @@
+h4 {
+    font-size: 16px;
+    color: #4D4C4C;
+  }
+  
+  .card-access {
+    --background: #F9F9F9;
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    border-radius: 12px;
+    ion-item {
+      --background: #F9F9F9;
+      font-size: 18px;
+    }
+  }
+
+  .vertical-margin {
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }

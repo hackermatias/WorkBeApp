@@ -1,0 +1,19 @@
+  .div-done {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 85%;
+    padding: 16px;
+    .img-done {
+      width: 45vw;
+      height: 60vw;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: auto;
+    }
+    ion-label {
+        font-size: 20px;
+    }
+  }

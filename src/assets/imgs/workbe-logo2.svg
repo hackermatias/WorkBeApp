@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="166" height="74" viewBox="0 0 166 74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d40000;
+        font-size: 45px;
+        font-family: Poppins-Regular, Poppins;
+      }
+    </style>
+  </defs>
+  <text id="Acceso" class="cls-1" transform="translate(83 50)"><tspan x="-82.35" y="0">Acceso</tspan></text>
+</svg>

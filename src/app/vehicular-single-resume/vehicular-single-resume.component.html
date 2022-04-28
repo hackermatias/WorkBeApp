@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start" (click)="back()">
+      <ion-icon src="../../assets/imgs/back-icon.svg" color="dark" class="back-icon"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      {{title | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card class="ion-padding ion-text-center card-access">
+    <div class="start" [ngClass]="{'check-in': check === true, 'check-out': check === false}"></div>
+    <ion-card-title class="title" [color]="check === true ? 'success' : 'danger'">
+      <ion-label>{{formatTime}}</ion-label>
+    </ion-card-title>
+    <ion-card-subtitle [color]="check === true ? 'success' : 'danger'">
+      <ion-label>{{formatDate | uppercase}}</ion-label>
+    </ion-card-subtitle>
+  </ion-card>
+  <div class="driver-data" *ngIf="vehicularAttendance">
+    <ion-grid class="ion-no-paffing">
+      <ion-row>
+        <ion-col size="4">
+          <div class="img" [style.background-image]="attendanceImage"></div>
+        </ion-col>
+        <ion-col size="8">
+          <ion-row>
+            <ion-col size="5">
+              <ion-label class="weight-title">{{'driver' | translate }}:</ion-label>
+            </ion-col>
+            <ion-col size="7">
+              <ion-label>{{vehicularAttendance.driverName}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-label class="weight-title">{{'rut' | translate }}:</ion-label>
+            </ion-col>
+            <ion-col size="7">
+              <ion-label>{{vehicularAttendance.driverIdNumber}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-label class="weight-title">{{'Patente'}}:</ion-label>
+            </ion-col>
+            <ion-col size="7">
+              <ion-label>{{vehicularAttendance.plateNumber}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="card-resume ion-no-padding" *ngIf="vehicularAttendance">
+    <div class="split-left text-style">
+      <ion-icon src="../../assets/imgs/users-icon-black.svg" color="dark"></ion-icon>
+      <ion-label>{{vehicularAttendance.numberWorkers}}</ion-label>
+    </div>
+    <div class="split-right text-style" (click)="displayWorkers()">
+      <ion-icon name="list" color="primary"></ion-icon>
+      <ion-label color="primary">{{'displayWorkers' | translate}}</ion-label>
+    </div>
+  </div>
+  <ion-button expand="block" class="button-margin-top ion-text-capitalize" color="light" (click)="finalize()">
+    {{'finalize' | translate}}
+  </ion-button>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-tab-button tab="home-menu" (click)="goHome()">
+      <ion-icon src="../../assets/imgs/home-icon.svg"></ion-icon>
+      <ion-label>{{'home' | translate}}</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-footer>

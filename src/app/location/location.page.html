@@ -1,0 +1,28 @@
+<ion-header class="ion-border-bottom ion-padding-horizontal">
+  <ion-toolbar>
+    <ion-title class="text-weight ion-no-padding">{{'selectAccess' | translate}}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-item lines="none" class="farm-item" *ngIf="farm" (click)="back()">
+      <ion-icon slot="start" src="../../assets/imgs/warehouse-icon.svg" color="primary"></ion-icon>
+      <ion-label>{{('Agroprime' | translate) + ' - ' + farm.name}}</ion-label>
+    </ion-item>
+  </ion-toolbar>
+  <ion-toolbar class="toolbar-search">
+    <ion-searchbar class="search-input" placeholder="{{'search' | translate}}" [(ngModel)]="searchValue">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list class="ion-padding">
+    <ion-item lines="none" class="ion-margin-bottom" color="primary" *ngFor="let entrance of filteredSearch()"
+      (click)="goHome(entrance)">
+      <ion-label class="text-weight entrance-item-color">{{entrance.name}}</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

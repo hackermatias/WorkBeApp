@@ -1,0 +1,12 @@
+<ion-content>
+  <div class="div-alert">
+    <h1>{{'alertTitle' | translate}}</h1>
+    <ion-icon class="icon-alert" name="close"></ion-icon>
+    <h2>{{'contactHR' | translate}}</h2>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed" *ngIf="showCloseBtn" (click)="close()">
+      <ion-fab-button color="light">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

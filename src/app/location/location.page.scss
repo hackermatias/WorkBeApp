@@ -1,0 +1,33 @@
+::ng-deep {
+    .farm-item {
+        box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.3);
+    }
+    .toolbar-search {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .search-input {
+        padding: 2px !important;
+        input, ion-icon {
+            font-weight: 600 !important;
+        }
+    }
+}
+
+ion-list {
+    ion-item {
+        ion-label {
+        background-color: #ffffff;
+        margin: 2px 0;
+        padding: 12px;
+        }
+    }
+}
+
+.text-weight {
+    font-weight: 600;
+}
+
+.entrance-item-color {
+    color: #000;
+}

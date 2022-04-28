@@ -1,0 +1,22 @@
+ion-content {
+    --background: transparent !important;
+    .div-alert {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 16px;
+      h1, h2 {
+        color: var(--ion-color-light);
+        text-align: center;
+      }
+      ion-icon {
+        &.icon-alert {
+          font-size: 50vw;
+          color: var(--ion-color-light);
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,76 @@
+.card-access {
+    --background: #F9F9F9;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    .title {
+      font-size: 56px;
+    }
+}
+
+.item-wrapper {
+    --background: #F9F9F9;
+    font-size: 18px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    ion-label {
+    --color: #575757;
+      margin-left: 8px;
+    }
+  }
+
+.start {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+}
+.check-in {
+    background-color: var(--ion-color-success);
+}
+.check-out {
+    background-color: var(--ion-color-primary);
+}
+
+.text-size {
+    font-size: 24px;
+}
+
+.bracelet-card {
+    --background: #F8F8F8;
+    height: 23vh;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+        color: var(--ion-color-primary);
+        font-size: 30vw;
+    }
+}
+
+.card-options {
+    --background: #F8F8F8;
+    border-radius: 12px;
+    ion-icon {
+        color: var(--ion-color-primary);
+        font-size: 32px;
+    }
+}
+
+.back-icon {
+    font-size: 36px;
+}
+
+ion-button.button-margin-top {
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    border-radius: 8px;
+    width: 50vw;
+    margin: auto;
+  }

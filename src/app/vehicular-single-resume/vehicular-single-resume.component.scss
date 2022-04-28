@@ -1,0 +1,90 @@
+.card-access {
+    --background: #F9F9F9;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    .title {
+      font-size: 56px;
+    }
+}
+
+.start {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+}
+.check-in {
+    background-color: var(--ion-color-success);
+}
+.check-out {
+    background-color: var(--ion-color-primary);
+}
+
+.back-icon {
+    font-size: 36px;
+}
+
+.driver-data {
+    border: 1px solid;
+    border-radius: 12px;
+    margin: 20px 10px;
+    .img {
+        width: 100%;
+        height: 15vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+      }
+    }
+    
+.card-resume {
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    margin: 5vh 10px;
+    font-weight: 600;
+    .split-left {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .split-right {
+        width: 70%;
+        height: 100%;
+        background-color: var(--ion-color-light);
+        padding-left: 8px;
+        padding-right: 8px;
+        border-radius: 0 12px 12px 0;
+        border-left: 2px solid rgba($color: #707070, $alpha: 0.2);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .text-style {
+        font-size: 16px;
+        ion-label {
+            padding-left: 8px;
+        }
+    }
+}
+
+ion-button {
+    width: 50vw;
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+    border-radius: 8px;
+    margin: 10vh auto;
+    font-size: 16px;
+}
+
+.weight-title {
+    font-weight: 600;
+}

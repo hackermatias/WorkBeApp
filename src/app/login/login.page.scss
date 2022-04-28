@@ -1,0 +1,58 @@
+.login-content {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 0 32px;
+    .logo-img1 {
+      margin-top: 8vh;
+      .logo-img2 {
+        position: relative;
+        img {
+          position: absolute;
+          left: calc(52vw - 64px);
+          height: 24px;
+        }
+      }
+    }
+    .label-check {
+        display: flex;
+        justify-content: center;
+        ion-checkbox {
+            margin: 0 8px !important;
+        }
+    }
+    .logo-footer {
+        display: table;
+    }
+  }
+  ::ng-deep {
+    .login-form {
+      ion-item {
+          --background: transparent;
+        ion-label[position="floating"] {
+          transform: translate(8px, 28px) !important;
+        }
+        ion-input {
+          input {
+            border: 1px solid #D40000 !important;
+            border-radius: 8px !important;
+            padding: 8px !important;
+          }
+        }
+        &.item-has-value, &.item-has-focus {
+          ion-label[position="floating"] {
+              transform: translate(4px, 8px) !important;
+              background-color: #ffffff;
+              z-index: 99;
+              width: fit-content;
+              padding-right: 4px;
+              font-size: 14px;
+              margin: 0;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>
+      {{'vehicularAccess' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-horizontal">
+  <ion-text class="ion-text-center ion-padding">
+    <h4>{{'vehicularControlTypeTitle' | translate}}</h4>
+  </ion-text>
+  <ion-card class="ion-padding card-access ion-margin-top" (click)="goCheck(2)">
+    <ion-item lines="none">
+      <ion-icon slot="start" src="../../assets/imgs/user-icon.svg"></ion-icon>
+      <ion-label color="primary">{{'individual' | translate}}</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card class="ion-padding card-access vertical-margin" (click)="goCheck(3)">
+    <ion-item lines="none">
+      <ion-icon slot="start" src="../../assets/imgs/users-icon.svg"></ion-icon>
+      <ion-label color="primary">
+        <span>N<sup>o</sup> </span> {{'workers' | translate}}
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card class="ion-padding card-access vertical-margin" (click)="goCheck(4)" [disabled]="true">
+    <ion-item lines="none">
+      <ion-icon slot="start" src="../../assets/imgs/manifest-icon.svg"></ion-icon>
+      <ion-label color="primary">{{'manifest' | translate}}</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-tab-button tab="home-menu" (click)="goHome()">
+      <ion-icon src="../../assets/imgs/home-icon.svg"></ion-icon>
+      <ion-label>{{'home' | translate}}</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-footer>

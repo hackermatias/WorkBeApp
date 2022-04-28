@@ -1,0 +1,38 @@
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    ion-label {
+      font-size: 16px;
+    }
+  }
+  ion-segment {
+    padding: 0 32px;
+    ion-segment-button {
+      --padding-start: 0 !important;
+      --padding-end: 0 !important;
+      ion-card {
+        margin-bottom: 4px !important;
+      }
+      .segment-card-w {
+        width: 95%;
+      }
+    }
+  }
+  
+  ion-content {
+      ion-item {
+          ion-icon {
+              margin: 0;
+          }
+          ion-label {
+              margin: 0 4px;
+              font-size: 14px;
+          }
+      }
+  }
+
+  .header-margin {
+    margin-top: 60px;
+  }

@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ 'sync' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="flex-center" style="flex-direction: column;">
+    <ion-card color="danger" class="ion-padding w-100" (click)="updateFarms()">
+      <ion-item lines="none" color="danger">
+        <ion-icon name="cloud-download" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">{{'farms' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="tertiary" class="ion-padding w-100" (click)="updateEntrances()">
+      <ion-item lines="none" color="tertiary">
+        <ion-icon name="cloud-download" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">{{'entrances' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="success" class="ion-padding w-100" (click)="updateWorkers()">
+      <ion-item lines="none" color="success">
+        <ion-icon name="cloud-download" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">{{'workers' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="warning" class="ion-padding w-100" (click)="updateSchedules()">
+      <ion-item lines="none" color="warning">
+        <ion-icon name="cloud-download" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">{{'schedule' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="dark" class="ion-padding w-100" [disabled]="true">
+      <ion-item lines="none" color="dark">
+        <ion-icon name="cloud-download" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">{{'blackList' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="primary" class="ion-padding w-100" (click)="getAllData()">
+      <ion-item lines="none" color="primary">
+        <ion-icon name="cloud-download" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase" translate>{{'updateAll' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <hr>
+    <ion-card color="orange" class="ion-padding w-100" (click)="uploadPedestrian()">
+      <ion-item lines="none" color="orange">
+        <ion-icon name="cloud-upload" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">
+          {{ 'sendPedestrian' | translate}}
+          <p><small>{{ 'pendings' | translate }}: {{pendingsP}}</small></p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="orange" class="ion-padding w-100" (click)="uploadVehicular()">
+      <ion-item lines="none" color="orange">
+        <ion-icon name="cloud-upload" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase">
+          {{ 'sendVehicular' | translate}}
+          <p><small>{{ 'pendings' | translate }}: {{pendingsV}}</small></p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card color="primary" class="ion-padding w-100" (click)="uploadAll()">
+      <ion-item lines="none" color="primary">
+        <ion-icon name="cloud-upload" slot="start"></ion-icon>
+        <ion-label class="ion-text-uppercase" translate>{{'uploadAll' | translate}}</ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

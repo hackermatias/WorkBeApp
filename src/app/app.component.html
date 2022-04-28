@@ -1,0 +1,119 @@
+<ion-app>
+  <ion-split-pane contentId="menuContent">
+    <ion-menu [swipeGesture]="false" side="start" contentId="menuContent">
+      <ion-content>
+        <ion-item lines="none">
+          <ion-toolbar class="ion-text-center">
+            <img src="../assets/imgs/logo_workbe.svg" height="36px" alt="" />
+          </ion-toolbar>
+          <ion-icon
+            name="chevron-back"
+            color="primary"
+            slot="end"
+            (click)="menuController.close()"
+          ></ion-icon>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="../assets/imgs/user-circle-default.svg" />
+          </ion-avatar>
+          <ion-label *ngIf="userName">{{ userName }}</ion-label>
+        </ion-item>
+        <ion-list class="ion-margin-top">
+          <ion-item
+            lines="none"
+            class="ion-margin-bottom"
+            (click)="changeTranslate()"
+          >
+            <ion-icon name="language" slot="start"></ion-icon>
+            {{ getCurrentLanguage() | async }}&nbsp;<span
+              *ngIf="country !== 'EN'"
+              >({{ getCountryName() }})&nbsp;</span
+            >
+            <ion-icon
+              *ngIf="country"
+              [src]="'../assets/flags/' + getFlagName() + '.svg'"
+            ></ion-icon>
+            <ion-icon name="chevron-forward" slot="end"></ion-icon>
+          </ion-item>
+          <ion-item
+            lines="none"
+            class="ion-margin-bottom"
+            routerLink="./sync"
+            (click)="menuController.close()"
+          >
+            <ion-icon
+              src="../assets/imgs/sync-arrows.svg"
+              slot="start"
+            ></ion-icon>
+            {{ "sync" | translate }}
+          </ion-item>
+          <ion-item lines="none" (click)="logout()">
+            <ion-icon
+              src="../assets/imgs/sign-out-icon.svg"
+              slot="start"
+            ></ion-icon>
+            {{ "logout" | translate }}
+          </ion-item>
+        </ion-list>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar color="light">
+          <ion-title class="ion-text-center">
+            <img
+              src="../assets/imgs/pb-agroprime-footer.svg"
+              height="44px"
+              alt=""
+            />
+          </ion-title>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="menuContent">
+      <ion-header *ngIf="entrance && !fullscreen">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+          </ion-buttons>
+          <ion-title class="ion-text-center">
+            <img src="../../assets/imgs/workbe-logo.svg" height="32px" alt="" />
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-tabs [class.content-pages]="!fullscreen">
+        <ion-tab-bar
+          slot="bottom"
+          *ngIf="entrance && !fullscreen"
+          class="ion-no-border"
+        >
+          <ion-tab-button
+            tab="settings"
+            (click)="goTo($event, 'settings')"
+            [class.tab-selected]="routePath === 'settings'"
+          >
+            <ion-icon name="settings"></ion-icon>
+            <ion-label>{{ "settings" | translate }}</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button
+            tab="home"
+            (click)="goTo($event, 'home')"
+            [class.tab-selected]="routePath === 'home'"
+          >
+            <ion-icon src="../../assets/imgs/home-icon.svg"></ion-icon>
+            <ion-label>{{ "home" | translate }}</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button
+            tab="records"
+            (click)="goTo($event, 'records')"
+            [class.tab-selected]="routePath === 'records'"
+          >
+            <ion-icon src="../../assets/imgs/report-icon.svg"></ion-icon>
+            <ion-label>{{ "records" | translate }}</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,33 @@
+
+
+ion-content {
+    padding: 8px;
+}
+ion-card {
+    margin: 10px;
+    border-radius: 8px;
+    ion-item {
+        ion-icon {
+            font-size: 48px;
+            margin: 16px;
+            margin-left: 0;
+        }
+        ion-label {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+}
+
+.farm-item {
+    box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.3);
+}
+
+.font-weight {
+    font-weight: 600;
+}
+
+.padding-vertical {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}

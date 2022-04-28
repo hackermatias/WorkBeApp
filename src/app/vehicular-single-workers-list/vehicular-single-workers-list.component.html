@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="end">
+      <ion-button class="ion-text-capitalize" (click)="back()">
+        {{'close' | translate}}
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">{{'workersList' | translate}}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="ion-margin-vertical">
+    <ion-searchbar class="search-icon" placeholder="{{'search' | translate}}" [(ngModel)]="searchValue"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ng-container *ngIf="model">
+      <ion-list-header class="ion-padding-horizontal header-font-size">
+        <ion-label>{{'names' | translate}}</ion-label>
+        <ion-label color="primary" class="ion-text-right">{{model.allAttendances.length}}</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let worker of filteredSearch()">
+        <ion-label>{{worker.fullNameWorker}}</ion-label>
+        <ion-icon slot="end" [color]="check ? 'success' : 'primary'" name="ellipse"></ion-icon>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-tab-button tab="home-menu" (click)="goHome()">
+      <ion-icon src="../../assets/imgs/home-icon.svg"></ion-icon>
+      <ion-label>{{'home' | translate}}</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-footer>

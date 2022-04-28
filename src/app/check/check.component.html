@@ -1,0 +1,42 @@
+<ion-content class="ion-padding">
+  <ion-card class="ion-margin-vertical card-access ion-padding ion-text-center">
+    <ion-card-title class="title">
+      <ion-label>{{formatTime}}</ion-label>
+    </ion-card-title>
+    <ion-card-subtitle>
+      <ion-label>{{formatDate | uppercase}}</ion-label>
+    </ion-card-subtitle>
+  </ion-card>
+  <div class="item-wrapper">
+    <ion-icon slot="start" src="../../assets/imgs/sign-out-icon.svg" color="primary"></ion-icon>
+    <ion-label>{{entrance?.name}}</ion-label>
+  </div>
+  <ion-card class="card-in ion-padding" (click)="switchTarget(true)">
+    <div class="start"></div>
+    <ion-item lines="none">
+      <ion-icon name="log-in-outline" color="success" slot="start" class="text-size">
+      </ion-icon>
+      <ion-label color="success" class="text-size">
+        {{'entry' | translate}}
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card class="card-out ion-padding" (click)="switchTarget(false)">
+    <div class="start"></div>
+    <ion-item lines="none">
+      <ion-icon name="log-out-outline" color="primary" slot="start" class="text-size">
+      </ion-icon>
+      <ion-label color="primary" class="text-size">
+        {{'departure' | translate}}
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-tab-button tab="home-menu" (click)="goHome()">
+      <ion-icon src="../../assets/imgs/home-icon.svg"></ion-icon>
+      <ion-label>{{'home' | translate}}</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-footer>

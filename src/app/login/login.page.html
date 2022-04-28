@@ -1,0 +1,50 @@
+<ion-content>
+  <div class="login-content">
+    <div class="logo-img1 ion-text-center">
+      <img src="../../assets/imgs/logo_workbe.svg" />
+    </div>
+    <form [formGroup]="fg" (ngSubmit)="login()" class="login-form">
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary"
+          >{{'domain' | translate}}</ion-label
+        >
+        <ion-input formControlName="tenancyName"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary"
+          >{{'user' | translate}}</ion-label
+        >
+        <ion-input formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary"
+          >{{'password' | translate}}</ion-label
+        >
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>
+          <div class="label-check ion-text-center">
+            {{'rememberMe' | translate}} <ion-checkbox></ion-checkbox>
+          </div>
+        </ion-label>
+      </ion-item>
+      <ion-button
+        expand="block"
+        shape="round"
+        color="primary"
+        [disabled]="fg.invalid"
+        class="ion-margin-horizontal"
+        (click)="login()"
+      >
+        {{'login' | translate}}
+      </ion-button>
+    </form>
+    <div class="logo_agroprime">
+      <img src="../../assets/imgs/logo_agroprime.svg" alt="" />
+    </div>
+    <div class="logo-footer ion-text-center">
+      <img src="../../assets/imgs/pb-agroprime-footer.svg" />
+    </div>
+  </div>
+</ion-content>

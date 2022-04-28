@@ -1,0 +1,57 @@
+::ng-deep {
+  .farm-item {
+      box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.3);
+  }
+  .toolbar-search {
+      padding-top: 8px;
+      padding-bottom: 8px;
+  }
+  .search-input {
+      padding: 2px !important;
+  }
+  ion-header {
+    ion-title.ion-text-center {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      right: 0;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center !important;
+      display: block;
+    }
+  }
+}
+
+ion-list {
+  ion-item {
+      ion-label {
+      background-color: #ffffff;
+      margin: 2px 0;
+      padding: 12px;
+      }
+  }
+}
+
+h4 {
+  font-size: 16px;
+  color: #4D4C4C;
+}
+
+.card-access {
+  --background: #F9F9F9;
+  box-shadow: 2px 2px 2px 1px rgba($color: #707070, $alpha: 0.6);
+  border-radius: 12px;
+  ion-item {
+    --background: #F9F9F9;
+    font-size: 24px;
+    ion-icon {
+      font-size: 40px;
+    }
+  }
+}
+
+.padding-vertical {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}

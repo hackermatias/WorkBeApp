@@ -1,0 +1,29 @@
+ion-list {
+    ion-item {
+        ion-label {
+        background-color: #ffffff;
+        margin: 2px 0;
+        padding: 12px;
+        }
+    }
+}
+::ng-deep {
+    .toolbar-title {
+        border-bottom: 4px solid rgba($color: #707070, $alpha: 0.3);
+    }
+    .toolbar-search {
+        margin-top: 12px;
+        padding: 0 12px;
+        input, ion-icon {
+            font-weight: 600 !important;
+        }
+    }
+}
+.text-weight {
+    font-weight: 600;
+}
+
+.farm-item-color {
+    color: #000;
+}
+  

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-no-padding">{{'manualEntry' | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="readDni()">
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-vertical">
+  <form class="form-dni" [formGroup]="fg" (ngSubmit)="continue()">
+    <div class="form">
+      <ion-list class="ion-no-padding">
+        <ion-radio-group [(ngModel)]="type" [ngModelOptions]="{standalone: true}" (ionChange)="onTypeChange()">
+          <ion-grid class="ion-no-padding">
+            <ion-row>
+              <ion-col size="7">
+                <ion-item lines="none">
+                  <ion-radio value="1"></ion-radio>
+                  <ion-label class="radio-info">{{'document' | translate}}</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                <ion-item lines="none">
+                  <ion-radio value="2"></ion-radio>
+                  <ion-label class="radio-info">{{'other' | translate}}</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-radio-group>
+      </ion-list>
+      <ion-item lines="none">
+        <ion-label position="stacked" color="primary">{{'dni' | translate}}</ion-label>
+        <ion-input class="ion-margin-vertical" placeholder="{{'enterDni' | translate}}" formControlName="dni">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="stacked" color="primary">{{'name' | translate}}</ion-label>
+        <ion-input class="ion-margin-vertical" placeholder="{{'enterName' | translate}}" formControlName="name">
+        </ion-input>
+      </ion-item>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button class="ion-text-capitalize" expand="block" shape="round" color="buttons" (click)="close()">
+          {{'cancel' | translate}}
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button class="ion-text-capitalize" expand="block" shape="round" color="buttons" [disabled]="fg.invalid"
+          (click)="continue()">
+          {{'continue' | translate}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
